@@ -4,6 +4,9 @@
     - name: Print Hello
       ansible.builtin.debug:
         msg: Hello
+    - name: Print World
+      ansible.builtin.debug:
+        msg: World
 
 - name: sample play 2
   hosts: all
