@@ -7,10 +7,17 @@
       ansible.builtin.debug:
         msg: "URL = {{URL}}"
     - name: print a task variable
-      debug:
+      ansible.builtin.debug:
         msg: "URL = {{URL}}"
       vars:
         URL: task.google.com
 
 
 ##when there is a variable reference  calling a variable, Double quote it
+
+- name: Demo on Inv variables
+  hosts: all
+  tasks:
+    - name: print a variable
+      ansible.builtin.debug:
+        msg: "URL = {{URL}}"
