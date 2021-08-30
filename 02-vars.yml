@@ -1,10 +1,16 @@
 - name: Demo on variables
   hosts: all
   vars:
-    URL: google.com
+    URL: play.google.com
   tasks:
     - name: print a variable
       ansible.builtin.debug:
         msg: "URL = {{URL}}"
+    - name: print a task variable
+      debug:
+        msg: "URL = {{URL}}"
+      vars:
+        URL: task.google.com
+
 
 ##when there is a variable reference  calling a variable, Double quote it
