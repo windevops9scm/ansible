@@ -21,3 +21,12 @@
     - name: print a variable
       ansible.builtin.debug:
         msg: "URL = {{URL}}"
+
+- name: Demo on file variables
+  hosts: all
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: print a variable
+      ansible.builtin.debug:
+        msg: "URL = {{URL}}"
