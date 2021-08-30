@@ -1,7 +1,11 @@
 - name: Install a package
   hosts: all
+  become: yes
+## Here all tasks run as root
   tasks:
     - name: Install nginx
+      become: yes
+## This makes only this task to run as root user
       ansible.builtin.yum:
         name: nodejs
         state: present
