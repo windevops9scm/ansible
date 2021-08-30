@@ -3,7 +3,7 @@
   become: yes
 ## Here all tasks run as root
   tasks:
-    - name: Install nginx
+    - name: Install nodejs
       become: yes
 ## This makes only this task to run as root user
       ansible.builtin.yum:
