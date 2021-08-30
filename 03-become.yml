@@ -1,0 +1,7 @@
+- name: Install a package
+  hosts: all
+  tasks:
+    - name: Install nginx
+      ansible.builtin.yum:
+        name: nodejs
+        state: present
