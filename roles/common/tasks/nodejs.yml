@@ -23,5 +23,5 @@
   community.general.npm:
     path: /home/roboshop/catalogue/
     state: latest
-  become-user: roboshop
+  become_user: roboshop
 
