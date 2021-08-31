@@ -32,7 +32,7 @@
     - catalogue
     - users
 
-// if it is a map
+#// if it is a map
 #- name: Load schema
 #  community.mongodb.mongodb_shell:
 #    file: "/tmp/mongodb-main/{{item.name}}.js"
