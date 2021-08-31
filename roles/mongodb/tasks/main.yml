@@ -24,12 +24,20 @@
     name: common
     tasks_from: download
 
-- name: Load schema- Catalogue
+- name: Load schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/catalogue.js"
+    file: "/tmp/mongodb-main/{{item}}.js"
     idempotent: yes
+  loop:
+    - catalogue
+    - users
 
-- name: Load schema- Users
-  community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/users.js"
-    idempotent: yes
+// if it is a map
+#- name: Load schema
+#  community.mongodb.mongodb_shell:
+#    file: "/tmp/mongodb-main/{{item.name}}.js"
+#    idempotent: "{{item.idempotency}}"
+#  loop:
+#    - {name: "catalogue", idempotency: yes}
+#    - {name: "users", idempotency: yes}
+
