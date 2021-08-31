@@ -1,20 +1,20 @@
-- name: create MongoDB repo
+- name: Create a MongoDB repo
   copy:
-    src: /mongo.repo
-    dest: /etc/yum.repos.d/
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
 
 - name: Install MongoDB
   yum:
     name: mongodb-org
     state: present
 
-- name: Update mongoDB listen address
+- name: Update MongoDB Listen Address
   ansible.builtin.replace:
-    path: /etc/mongod.conf
+    path:  /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Start mongoDB service
+- name: Start MongoDB service
   systemd:
     name: mongod
     state: started
