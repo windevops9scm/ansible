@@ -19,3 +19,9 @@
     owner: roboshop
     group: roboshop
 
+- name: Install Catalogue dependencies
+  community.general.npm:
+    path: /home/roboshop/catalogue/
+    state: latest
+  become-user: roboshop
+
