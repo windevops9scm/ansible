@@ -1,6 +1,6 @@
 - name: Install NodeJs
   yum:
-    name: ["nodejs", "make", "gcc-c++"]
+    name: [ "nodejs", "make", "gcc-c++" ]
     state: present
 
 - name: Add a Roboshop application user
