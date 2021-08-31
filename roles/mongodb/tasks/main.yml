@@ -7,30 +7,30 @@
   yum:
     name: mongodb-org
     state: present
-#
-#- name: Update MongoDB Listen Address
-#  ansible.builtin.replace:
-#    path:  /etc/mongod.conf
-#    regexp: '127.0.0.1'
-#    replace: '0.0.0.0'
-#
-#- name: Start MongoDB service
-#  systemd:
-#    name: mongod
-#    state: started
-#
-#- name: Download and extract MongoDB schema
-#  ansible.builtin.unarchive:
-#    src: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
-#    dest: /tmp
-#    remote_src: yes
-#
-#- name: Load schema- Catalogue
-#  community.mongodb.mongodb_shell:
-#    file: "/tmp/mongodb-main/catalogue.js"
-#    idempotent: yes
-#
-#- name: Load schema- Users
-#  community.mongodb.mongodb_shell:
-#    file: "/tmp/mongodb-main/users.js"
-#    idempotent: yes
+
+- name: Update MongoDB Listen Address
+  ansible.builtin.replace:
+    path:  /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Start MongoDB service
+  systemd:
+    name: mongod
+    state: started
+
+- name: Download and extract MongoDB schema
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: Load schema- Catalogue
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes
+
+- name: Load schema- Users
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/users.js"
+    idempotent: yes
