@@ -19,7 +19,7 @@
     name: mongod
     state: started
 
-- name: Download and extract MongoDB shcema
+- name: Download and extract MongoDB schema
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
     dest: /tmp
