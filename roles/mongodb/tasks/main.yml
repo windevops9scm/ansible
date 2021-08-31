@@ -12,7 +12,7 @@
   ansible.builtin.replace:
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
-    replcae: '0.0.0.0'
+    replace: '0.0.0.0'
 
 - name: Start mongoDB service
   systemd:
