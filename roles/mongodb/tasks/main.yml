@@ -19,11 +19,10 @@
     name: mongod
     state: started
 
-- name: Download and extract MongoDB schema
-  ansible.builtin.unarchive:
-    src: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
-    dest: /tmp
-    remote_src: yes
+- name: Download and extract mongodb content
+  include_role:
+    name: common
+    tasks_from: download
 
 - name: Load schema- Catalogue
   community.mongodb.mongodb_shell:

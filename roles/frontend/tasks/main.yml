@@ -9,10 +9,9 @@
     state: absent
 
 - name: Download and extract frontend content
-  ansible.builtin.unarchive:
-    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /tmp
-    remote_src: yes
+  include_role:
+    name: common
+    tasks_from: download
 
 - name: copy the extracted content
   ansible.builtin.copy:
