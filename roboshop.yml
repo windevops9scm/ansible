@@ -1,11 +1,13 @@
 - name: Roboshop frontend setup
   hosts: FRONTEND
   become: yes
+  tags: frontend
   roles:
     - name: frontend
 
 - name: Roboshop MongoDB setup
   hosts: MongoDB
   become: yes
+  tags: momgodb
   roles:
     - name: mongodb
