@@ -8,6 +8,6 @@
 - name: Roboshop MongoDB setup
   hosts: MONGODB
   become: yes
-  tags: momgodb
+  tags: mongodb
   roles:
     - name: mongodb
