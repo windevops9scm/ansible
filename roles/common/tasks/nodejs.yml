@@ -33,7 +33,7 @@
 - name: restart {{COMPONENT}} service
   systemd:
     name: "{{COMPONENT}}"
-    state: started
+    state: restarted
     enabled: yes
     daemon_reload: yes
 
