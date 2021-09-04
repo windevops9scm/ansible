@@ -25,3 +25,16 @@
     state: latest
   become_user: roboshop
 
+- name: Update systemd configuration
+  copy:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: restrat xatalogue service
+  systemd:
+    name: catalogue
+    state: started
+    enabled: yes
+    daemon_reload: yes
+
+
