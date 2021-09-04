@@ -30,7 +30,7 @@
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
 
-- name: restrat xatalogue service
+- name: restrat catalogue service
   systemd:
     name: catalogue
     state: started

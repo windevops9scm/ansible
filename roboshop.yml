@@ -18,3 +18,10 @@
   tags: catalogue
   roles:
     - name: catalogue
+
+- name: Roboshop Redis setup
+  hosts: REDIS
+  become: yes
+  tags: redis
+  roles:
+    - name: redis
