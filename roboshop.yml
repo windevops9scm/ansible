@@ -32,3 +32,10 @@
   tags: user
   roles:
     - name: user
+
+- name: Roboshop Cart setup
+  hosts: CART
+  become: yes
+  tags: cart
+  roles:
+    - name: cart
