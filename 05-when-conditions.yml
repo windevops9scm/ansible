@@ -3,6 +3,7 @@
   vars:
     URL: google.com
     a: 10
+    ACTION: true
 
   tasks:
     - name: condition on strings
@@ -24,5 +25,27 @@
       when: a <= 10
       debug:
         msg: welcome
+
+    - name: Run if action is true
+      when: Action
+      debug:
+        msg: Hello
+
+    - name: Run if action is not true
+      when:  not Action
+      debug:
+        msg: world
+
+    - name: Run if variable B is defined
+      when: B is defined
+      debug:
+        msg: it is defined
+
+    - name: Run if variable B is not defined and a is less than 10
+      when: B is not defined and a <= 10
+      debug:
+        msg: hello
+
+
 
 
