@@ -2,9 +2,27 @@
   hosts: localhost
   vars:
     URL: google.com
+    a: 10
 
   tasks:
     - name: condition on strings
       when: URL == "google.com"
       debug:
         msg: Hello
+
+    - name: condition on strings
+      when: URL != "google.com"
+      debug:
+        msg: world
+
+    - name : Condition on numbers
+      when: a == 10
+      debug:
+        msg: user
+
+    - name : Condition on numbers
+          when: a <= 10
+          debug:
+            msg: welcome
+
+
