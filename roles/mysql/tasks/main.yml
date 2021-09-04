@@ -14,11 +14,11 @@
     state: started
     enabled: yes
 
-- name: check default password
-  community.mysql.mysql.query:
+- name: Check the default password
+  community.mysql.mysql_query:
     query: show databases
-    login_user: root
     login_password: RoboShop@1
+    login_user: root
   register: default_mysql_check
   ignore_errors: yes
 
