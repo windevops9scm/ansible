@@ -14,15 +14,24 @@
     state: started
     enabled: yes
 
-- name: Check the default password
-  shell: echo "show databases;" | mysql -uroot -pRoboShop@1
+- name: check default password
+  community.mysql.mysql.query:
+    query: show databases
+    login_user: root
+    login_password: RoboShop@1
   register: default_mysql_check
   ignore_errors: yes
+
+#- name: Check the default password
+#  shell: echo "show databases;" | mysql -uroot -pRoboShop@1
+#  register: default_mysql_check
+#  ignore_errors: yes
 
 - name: print
   debug:
     msg: "{{default_mysql_check}}"
 
 - name: Grab default password
+  when: default_mysql_check.failed
   shell: grep 'A temporary password' /var/log/mysqld.log  | awk '{print $NF}'
   register: out
