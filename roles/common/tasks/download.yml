@@ -8,8 +8,8 @@
 
 - name: Delete old App code
   file:
-  path: /home/roboshop/{{COMPONENT}}/
-  state: absent
+    path: /home/roboshop/{{COMPONENT}}/
+    state: absent
 
 - name: copy the extracted content
   ansible.builtin.copy:
