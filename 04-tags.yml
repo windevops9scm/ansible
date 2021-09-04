@@ -1,0 +1,36 @@
+- name: Demo on tags
+  hosts: localhost
+  tasks:
+    - name: Ubuntu Task
+      debug:
+        msg: Ubuntu Task
+      tags:
+        - ubuntu
+        - debain
+
+    - name: CentOS task
+      debug:
+        msg: CentOS Task
+      tags:
+        - centos
+        - redhat
+
+
+- name: Ubuntu Tags
+  hosts: localhost
+  tags:
+    - ubuntu
+  tasks:
+    - name: Ubuntu Task
+      debug:
+        msg: Ubuntu Task
+
+- name: CentOS Tags
+  hosts: localhost
+  tags:
+    - centos
+  tasks:
+    - name: CentOS Task
+      debug:
+        msg: CentOS Task
+

@@ -1,0 +1,10 @@
+- name: Demo on when conditions
+  hosts: localhost
+  vars:
+    URL: google.org
+
+  tasks:
+    - name: condition on strings
+      when: URL == "google.com"
+      debug:
+        msg: Hello
