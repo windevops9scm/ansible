@@ -27,12 +27,12 @@
         msg: welcome
 
     - name: Run if action is true
-      when: Action
+      when: ACTION
       debug:
         msg: Hello
 
     - name: Run if action is not true
-      when:  not Action
+      when:  not ACTION
       debug:
         msg: world
 
