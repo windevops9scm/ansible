@@ -42,3 +42,8 @@
     login_password: RoboShop@1
     login_user: root
   ignore_errors: yes
+
+- name: Download and Extract Frontend content
+  include_role:
+    name: common
+    tasks_from: download
