@@ -21,8 +21,8 @@
         msg: user
 
     - name : Condition on numbers
-          when: a <= 10
-          debug:
-            msg: welcome
+      when: a <= 10
+      debug:
+        msg: welcome
 
 
