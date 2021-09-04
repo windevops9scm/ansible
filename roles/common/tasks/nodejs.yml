@@ -13,26 +13,26 @@
 
 - name: copy the extracted content
   ansible.builtin.copy:
-    src: /tmp/catalogue-main/
-    dest: /home/roboshop/catalogue/
+    src: /tmp/{{COMPONENT}}-main/
+    dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
     owner: roboshop
     group: roboshop
 
-- name: Install Catalogue dependencies
+- name: Install {{COMPONENT}} dependencies
   community.general.npm:
-    path: /home/roboshop/catalogue/
+    path: /home/roboshop/{{COMPONENT}}/
     state: latest
   become_user: roboshop
 
 - name: Update systemd configuration
   copy:
     src: systemd.service
-    dest: /etc/systemd/system/catalogue.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
-- name: restrat catalogue service
+- name: restrat {{COMPONENT}} service
   systemd:
-    name: catalogue
+    name: "{{COMPONENT}}"
     state: started
     enabled: yes
     daemon_reload: yes
