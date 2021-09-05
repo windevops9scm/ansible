@@ -2,10 +2,10 @@
   copy:
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
+  notify: restart service -Handler
 
 - name: restart {{COMPONENT}} service
   systemd:
     name: "{{COMPONENT}}"
     state: restarted
     enabled: yes
-    daemon_reload: yes
