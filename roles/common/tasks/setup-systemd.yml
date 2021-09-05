@@ -1,5 +1,5 @@
 - name: Update systemd configuration
-  copy:
+  template:
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
   notify: restart service - Handler
