@@ -1,4 +1,4 @@
-- name: restart service -Handler
+- name: restart service - Handler
   systemd:
     name: "{{COMPONENT}}"
     state: restarted
