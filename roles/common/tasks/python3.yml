@@ -18,13 +18,13 @@
 
 - name: Update INI file -User ID
   replace:
-    path: /home/roboshop/{{COMPONENT}}/{{COMPNENT}}.ini
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: "^uid"
     replace: "uid = ???"
 
 - name: Update INI file -group ID
   replace:
-    path: /home/roboshop/{{COMPONENT}}/{{COMPNENT}}.ini
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: "^gid"
     replace: "gid = ???"
 
