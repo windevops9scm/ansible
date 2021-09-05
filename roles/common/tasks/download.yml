@@ -1,6 +1,7 @@
 - name: Add roboshop application user
   ansible.builtin.user:
     name: roboshop
+  register: app_user
 
 - name: Download from Github
   include_tasks:

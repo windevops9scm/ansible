@@ -1,0 +1,35 @@
+-name: Install Python3
+  yum:
+    name: ["python36", "gcc", "python3-devel"]
+    state: present
+
+- name: Download App code  & Add App User
+  include_tasks:
+    file: download.yml
+
+- name: Install Python Depencencies
+  pip:
+    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
+    executable: pip3
+
+- name: print
+  debug:
+    msg: "{{app_user}}"
+
+- name: Update INI file -User ID
+  replace:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPNENT}}.ini
+    regexp: "^uid"
+    replace: "uid = ???"
+
+- name: Update INI file -group ID
+  replace:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPNENT}}.ini
+    regexp: "^gid"
+    replace: "gid = ???"
+
+
+- name: Setup SystemD
+  include_tasks:
+    file: setup-systemd.yml
+
