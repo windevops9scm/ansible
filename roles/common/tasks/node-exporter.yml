@@ -29,5 +29,5 @@
 
 - name: Start Node Exporter Service
   systemd:
-    name: node-exporter
+    name: node_exporter
     state: started
