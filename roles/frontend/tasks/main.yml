@@ -19,6 +19,11 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
+- name: Update Main Nginx config
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 #- name: copy roboshop configuration file
 #  copy:
 #    src: roboshop.conf
