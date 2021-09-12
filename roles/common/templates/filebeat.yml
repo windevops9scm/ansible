@@ -6,6 +6,9 @@ filebeat.inputs:
 {% endif %}
     paths:
       - {{LOG_FILE}}
+    fields:
+      component: {{COMPONENT}}
+      STRUCTURED: {{STRUCTURED}}
 
 output.logstash:
   # The Logstash hosts
