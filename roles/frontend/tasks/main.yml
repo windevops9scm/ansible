@@ -34,12 +34,6 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Restart nginx service
-  systemd:
-    name: nginx
-    state: restarted
-    enabled: yes
-
 - name: Install Node Exporter
   include_role:
     name: common
@@ -52,3 +46,9 @@
   vars:
     LOG_FILE: /var/log/nginx/access.log
     STRUCTURED: "false"
+
+- name: Restart nginx service
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
