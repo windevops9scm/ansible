@@ -16,6 +16,9 @@ filebeat.inputs:
     multiline.negate: true
     multiline.match: after
 {% endif %}
+{% if APP_TYPE == "python" %}
+    include_lines: ['^\[']
+{% endif %}
 
 output.logstash:
   # The Logstash hosts
