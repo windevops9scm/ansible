@@ -46,6 +46,7 @@
   vars:
     LOG_FILE: /var/log/nginx/access.log
     STRUCTURED: "false"
+    APP_TYPE: nginx
 
 - name: Restart nginx service
   systemd:

@@ -20,4 +20,12 @@
   include_tasks:
     file: node-exporter.yml
 
+- name: Install Node Exporter
+  include_tasks:
+    file: filebeat.yml
+  vars:
+    LOG_FILE: /var/log/{{COMPONENT}}.log
+    STRUCTURED: "true"
+    APP_TYPE: java
+
 

@@ -9,6 +9,13 @@ filebeat.inputs:
     fields:
       component: {{COMPONENT}}
       STRUCTURED: {{STRUCTURED}}
+      APP_TYPE: {{APP_TYPE}}
+
+{% if APP_TYPE == "java" %}
+    multiline.pattern: "^[0-9][0-9][0-9][0-9]-"
+    multiline.negate: true
+    multiline.match: after
+{% endif %}
 
 output.logstash:
   # The Logstash hosts
